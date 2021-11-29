@@ -11,6 +11,7 @@ Ruby 2.7.3 with Rails 5.2.6
 ```
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
+gem 'devise'
 ```
 
 # **Entity Relationship Diagram**
@@ -18,3 +19,11 @@ Please note that the models could be modified in the future.
 
 ![ERD](https://user-images.githubusercontent.com/83678807/143732268-187d8241-e2f8-4a3c-9ea5-28a47ef1dd62.jpg)
 
+# **Register new user**
+http://localhost:3000/users/sign_up
+
+# **Admin credentials**
+```
+user: admin
+password: 123456
+```
