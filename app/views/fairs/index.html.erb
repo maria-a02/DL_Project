@@ -1,2 +1,36 @@
-<h1>Fairs#index</h1>
-<p>Find me in app/views/fairs/index.html.erb</p>
+<h1>Ferias de Santiago</h1>
+
+<br>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Main street</th>
+            <th>First street</th>
+            <th>Second street</th>
+            <th>Commune</th>
+            <th>Day</th>
+            <th>Start time</th>
+            <th>End time</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+    <tbody id="fairs">
+        <% @fairs.each do |fair| %>
+            <tr>
+            <td><%= fair.name %></td>
+            <td><%= fair.description %></td>
+            <td><%= fair.main_street %></td>
+            <td><%= fair.first_street %></td>
+            <td><%= fair.second_street %></td>
+            <td><%= fair.commune %></td>
+            <td><%= fair.day %></td>
+            <td><%= fair.start_time %></td>
+            <td><%= fair.end_time %></td>
+        <% end %>
+    </tbody>
+</table>
+<br>
+
