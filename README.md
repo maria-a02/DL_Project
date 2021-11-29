@@ -21,6 +21,8 @@ Please note that the models could be modified in the future.
 
 # **Register new user**
 http://localhost:3000/users/sign_up
+# **Login**
+http://localhost:3000/users/sign_in
 
 # **Admin credentials**
 ```
