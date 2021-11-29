@@ -1,0 +1,2 @@
+class Fair < ApplicationRecord
+end

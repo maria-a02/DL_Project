@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  main_street: MyString
+  first_street: MyString
+  second_street: MyString
+  commune: MyString
+  day: MyString
+  start_time: 2021-11-28 21:59:11
+  end_time: 2021-11-28 21:59:11
+
+two:
+  name: MyString
+  description: MyString
+  main_street: MyString
+  first_street: MyString
+  second_street: MyString
+  commune: MyString
+  day: MyString
+  start_time: 2021-11-28 21:59:11
+  end_time: 2021-11-28 21:59:11
