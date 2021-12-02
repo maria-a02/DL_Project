@@ -25,4 +25,4 @@ csv.each do |row|
     f.start_time = row['START_TIME']
     f.end_time = row['END_TIME']
     f.save
-end
+endAdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
