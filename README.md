@@ -2,7 +2,7 @@
 It's very common to use search platforms to find a product, a market nowadays. But also, some types of markets offering products, for example, fairs or "ferias libres" and their information about their location or timings is not sorted clearly or available for everyone. The purpose of this project is to build an application gathering and showing information about markets/fairs from different communes in Santiago, Chile, and sort them clearly for people looking for "ferias libres" in Santiago. Users will be able to leave their comments about these fairs.
 
 # **Trello Board**
-https://trello.com/b/oSNl58Oi/g46-project
+https://trello.com/b/oSNl58Oi/laferiapp
 
 # **Gemset recommended**
 Ruby 2.7.3 with Rails 5.2.6
