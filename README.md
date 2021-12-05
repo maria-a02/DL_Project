@@ -12,6 +12,7 @@ Ruby 2.7.3 with Rails 5.2.6
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'devise'
+gem "activeadmin", "~> 2.9"
 ```
 
 # **Entity Relationship Diagram**
@@ -21,11 +22,13 @@ Please note that the models could be modified in the future.
 
 # **Register new user**
 http://localhost:3000/users/sign_up
+
 # **Login**
 http://localhost:3000/users/sign_in
 
-# **Admin credentials**
+# **Admin dashboard**
+http://localhost:3000/admin/login
 ```
-user: admin
-password: 123456
+Email: admin@example.com
+Password: password
 ```
