@@ -1,21 +1,38 @@
-<% if  user_signed_in? %>
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="#">Ferias de Santiago</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-</nav>
+    <div class="container">
+        <a class="navbar-brand"></a><a>Ferias Libres de Santiago</a>
+        <a class="navbar-brand" href="#">
+            <%= image_tag("logo.jpg", :alt => "Logo") %>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
 
-<%else%>
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="#">Ferias de Santiago</a>
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <%= link_to 'Registrarse', new_user_registration_path, class:"btn btn-success" %>
-        </li>
-        <li class="nav-item">
-            <%= link_to 'Iniciar Sesión', user_session_path, class:"btn btn-primary" %>
-        </li>
-    </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <% if user_signed_in? %>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <%= link_to 'Ver tu perfil', profile_path(current_user.id), class:"nav-link" %>
+                </li>
+                <li class="nav-item active">
+                    <%= link_to 'Ver tus comentarios', opinion_path(current_user.id), class:"nav-link" %>
+                </li>
+            </ul>
+            <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class:"nav-link" %>
+            <% else %>
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <li class="nav-item">
+                    <%= link_to 'Registrarse', new_user_registration_path, class:"btn btn-success" %>
+                    </li>
+                    <li class="nav-item">
+                    <%= link_to 'Iniciar sesión', new_user_session_path, class: "btn btn-primary" %>
+                    </li>
+                </li> 
+                </ul>
+            <% end %>
+            </ul>
+        </div>
+    </div>
 </nav>
-<% end %>
