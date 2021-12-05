@@ -1,4 +1,25 @@
-<td> <%= current_user.name %></td>
-<td> <%= current_user.photo %></td>
-<td> <%= current_user.email %></td>
-<td> <%= current_user.about %></td>
+<div id='tableuser'>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Foto</th>
+            <th>Email</th>
+            <th>Sobre mí</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <div id='user'>
+            <td><%= current_user.name %></td>
+            <td><%= current_user.photo %></td>
+            <td><%= current_user.email %></td>
+            <td><%= current_user.about %></td>
+        </div>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div id='edituser' class="p-3">
+    <%= link_to 'Editar', edit_user_path(current_user.id), class: 'btn btn-info', remote: true%>
+</div>

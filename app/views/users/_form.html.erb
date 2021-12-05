@@ -1,7 +1,7 @@
 <%= form_with(model: @user, remote: true) do |form| %>  
     <% if @user.errors.any? %>    
         <div id="error_explanation">      
-            <h2><%= pluralize(user.errors.count, "error") %> no se pudo actualizar tu perfil</h2>
+            <h2><%= pluralize(@user.errors.count, "error") %> no se pudo actualizar tu perfil</h2>
             <ul>      
             <% @user.errors.full_messages.each do |message| %>        
                 <li><%= message %></li>      
@@ -28,5 +28,9 @@
     <div class="actions py-1">    
     <%= form.submit class: 'btn btn-success' %>  
     </div>
-
 <% end %>
+
+<div class= 'py-2'>
+    <%= link_to 'Volver a tu perfil', profile_path(current_user.id), class: 'btn btn-light' %>
+    <%= link_to 'Volver al inicio', root_path, class: 'btn btn-warning' %>
+</div>

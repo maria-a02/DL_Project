@@ -27,7 +27,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <i>(necesitamos tu contraseña para confirmar los cambios)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
@@ -36,8 +36,8 @@
   </div>
 <% end %>
 
-<h3>Cancelar mi cuenta</h3>
+<h3>Desactivar mi cuenta</h3>
 
-<p>¿Quieres cerrar tu cuenta definitivamente? <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "¿Estás seguro/a?" }, method: :delete %></p>
+<p>¿Quieres cerrar tu cuenta definitivamente? <%= button_to "Desactivar mi cuenta", registration_path(resource_name), data: { confirm: "¿Estás seguro/a?" }, method: :delete %></p>
 
 <%= link_to "Volver", :back %>

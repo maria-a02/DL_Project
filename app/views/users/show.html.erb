@@ -1,5 +1,6 @@
 <h1>Perfil</h1>
 
+<div id='tableuser'>
 <table class="table">
     <thead>
         <tr>
@@ -20,7 +21,8 @@
         </tr>
     </tbody>
 </table>
-
+</div>
 <div id='edituser' class="p-3">
     <%= link_to 'Editar', edit_user_path(current_user.id), class: 'btn btn-info', remote: true%>
+    <%= link_to 'Volver al inicio', root_path, class: 'btn btn-warning' %>
 </div>

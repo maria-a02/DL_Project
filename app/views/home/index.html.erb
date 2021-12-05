@@ -1,11 +1,11 @@
 <% if user_signed_in? %>
 
-<div class='p-5'>
+<div class='p-3'>
 <h1><strong>Ferias de Santiago</strong></h1>
 </div>
 
-    <div class="container p-5">
-        <div id="carouselExampleIndicators" class="carousel slide bg-light text-white rounded" data-ride="carousel">
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide bg-light text-white rounded m-5" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -13,13 +13,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <%= image_tag 'portada1.jpg', class:'d-block w-100' %>
+                    <%= image_tag 'portada1.jpg', class:'img d-block w-100' %>
                 </div>
                 <div class="carousel-item">
-                    <%= image_tag 'portada2.jpg', class:'d-block w-100' %>
+                    <%= image_tag 'portada2.jpg', class:'img d-block w-100' %>
                 </div>
                 <div class="carousel-item">
-                    <%= image_tag 'portada3.jpg', class:'d-block w-100' %>
+                    <%= image_tag 'portada3.jpg', class:'img d-block w-100' %>
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
