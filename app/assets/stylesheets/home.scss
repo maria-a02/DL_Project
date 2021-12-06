@@ -4,7 +4,23 @@
 @import 'bootstrap';
 
 body {
-    font-family: 'Lobster', cursive;
+font-family: 'Merienda',
+cursive;
+}
+
+#footer {
+    background-color: #e3f2fd;
+    text-align: center;
+    width: 100%;
+    padding: 50px 0;
+}
+
+.navbar {
+    background-color: #e3f2fd;
+}
+
+.text-nav {
+    text-align: left;
 }
 
 .carousel-indicators li {
@@ -16,4 +32,12 @@ body {
 .img {
     height: 450px;
     weight: 600px;
+}
+
+.card-header {
+    background-color: #93c47d;
+}
+
+.card-body {
+    background-color: #fff5d9;
 }
