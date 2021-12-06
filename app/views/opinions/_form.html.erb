@@ -1,9 +1,9 @@
-<%= form_with(model: [@user, @fair, opinion], local: true) do |form| %>
-    <% if opinion.errors.any? %>
+<%= form_with(model: @opinion, local: true) do |form| %>
+    <% if @opinion.errors.any? %>
         <div id="error_explanation">
-            <h2><%= pluralize(opinion.errors.count, "error") %> no se pudo agregar este comentario:</h2>
+            <h2><%= pluralize(@opinion.errors.count, "error") %> no se pudo agregar este comentario:</h2>
             <ul>
-            <% opinion.errors.full_messages.each do |message| %>
+            <% @opinion.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
             <% end %>
             </ul>
