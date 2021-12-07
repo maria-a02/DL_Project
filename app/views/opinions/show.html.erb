@@ -3,7 +3,6 @@
 <table>
     <thead>
         <tr>
-        <th>Usuario</th>
         <th>Título</th>
         <th>Comentario</th>
         <th>Rating</th>
@@ -13,7 +12,6 @@
     </tr>
     </thead>
 <tbody>
-    <td><%= current_user.name%></td>
     <% @opinions.each do |opinion| %>
         <tr>
             <td><%= opinion.title%></td>

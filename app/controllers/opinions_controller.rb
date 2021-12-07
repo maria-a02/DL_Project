@@ -24,8 +24,7 @@ before_action :set_opinion, only: %i[ show edit update destroy ]
   def create
     @fairs = Fair.all
     @fair = Fair.all
-    @opinion.user_id = current_user.id
-    @opinion = Opinion.new(opinion_params)
+    @opinion = Opinion.new(opinion_params.merge(user: current_user))
     respond_to do |format|
       if @opinion.save
       format.html { redirect_to @opinion, notice: 'Se agregó tu comentario.' }
@@ -38,7 +37,9 @@ before_action :set_opinion, only: %i[ show edit update destroy ]
   def update
     respond_to do |format|
       if @opinion.update!(opinion_params)
-        format.html {redirect_to opinions_path}
+          format.html { redirect_to opinion_path, notice: 'La información se actualizó' }
+      else
+          format.html { redirect_to edit_opinion_path, notice: 'La información no se pudo actualizar' }
       end
     end
   end
