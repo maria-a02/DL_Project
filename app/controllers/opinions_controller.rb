@@ -24,6 +24,7 @@ before_action :set_opinion, only: %i[ show edit update destroy ]
   def create
     @fairs = Fair.all
     @fair = Fair.all
+    @opinion.user_id = current_user.id
     @opinion = Opinion.new(opinion_params)
     respond_to do |format|
       if @opinion.save

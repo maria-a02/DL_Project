@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[edit update] 
   devise_for :users
   get 'profile/:id', to: 'users#show', as:'profile'
-  get 'comments/create', to: 'opinions#index', as:'comments'
+  get 'filter', to: 'fairs#filter', as: 'filter'
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

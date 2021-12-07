@@ -6,4 +6,9 @@ class FairsController < ApplicationController
 
   def show
   end
+
+  def filter
+    @fairs = Fair.all
+    @fairs = Fair.where(commune: params[:commune]) if params[:commune].present?
+  end
 end
