@@ -58,6 +58,6 @@ before_action :set_opinion, only: %i[ show edit update destroy ]
   end
   
   def opinion_params
-    params.require(:opinion).permit(:title, :opinion, :rating, :user_id, :fair_id)
+    params.require(:opinion).permit(:title, :comment, :rating, :user_id, :fair_id)
   end
 end
