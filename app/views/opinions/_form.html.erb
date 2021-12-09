@@ -20,11 +20,15 @@
     <%= form.text_field :comment %>
     </div>
     
-    <div id="opinion-rating" data-score="<%= opinion.rating %>">
+    <div id="rating-form" class="field">
     <%= form.label :Rating %>
-    <%= form.text_field :rating %>
+    <script>
+    $('#rating-form').raty({
+    path: '/assets/',
+    scoreName: 'opinion[rating]'
+    });
+    </script>
     </div>
-    
 
     <div class="field">
     <%= form.label :Feria %>
