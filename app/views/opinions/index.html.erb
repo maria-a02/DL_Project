@@ -16,13 +16,22 @@
         <tr>
             <td><%= opinion.title%></td>
             <td><%= opinion.comment %></td>
-            <td><%= opinion.rating %></td>
+            <td id="opinion-rating" data-score="<%= opinion.rating %>"></td>
             <td><%= link_to 'Editar', edit_opinion_path(opinion) %></td>
             <td><%= link_to 'Borrar', opinion, method: :delete, data: {confirm: '¿Quieres eliminar tu comentario?'} %></td>
         </tr>
     <% end %>
 </tbody>
 </table>
-<%= link_to 'Agregar comentario', new_opinion_path, class: 'btn btn-info my-2' %>
-<%= link_to 'Volver al inicio', root_path, class: 'btn btn-warning my-2' %>
+<%= link_to 'Agregar comentario', new_opinion_path, class: 'btn btn-info' %>
+<%= link_to 'Volver al inicio', root_path, class: 'btn btn-warning' %>
 
+<script>
+$('#opinion-rating').raty({
+    readOnly: true,
+    score: function() {
+    return $(this).attr('data-score');
+    },
+    path: '/assets/'
+});
+</script>

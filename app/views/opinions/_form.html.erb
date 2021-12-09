@@ -20,10 +20,11 @@
     <%= form.text_field :comment %>
     </div>
     
-    <div class="field">
+    <div id="opinion-rating" data-score="<%= opinion.rating %>">
     <%= form.label :Rating %>
     <%= form.text_field :rating %>
     </div>
+    
 
     <div class="field">
     <%= form.label :Feria %>
