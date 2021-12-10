@@ -11,11 +11,13 @@ class UsersController < ApplicationController
 
   def update
     respond_to do |format|
-        if @user.update!(user_params)
-            format.js { render nothing: true, notice: 'La información se actualizó' }
-        else
-            format.html { redirect_to edit_user_path, notice: 'La información no se pudo actualizar' }
-        end
+      if @user.update(user_params)
+        format.js { redirect_to profile_path(current_user.id), notice: "Se actualizó tu perfil." }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
   end
 
