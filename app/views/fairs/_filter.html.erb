@@ -4,26 +4,3 @@
     <%= select_tag(:fair_id, options_for_select(Fair.pluck(:commune) ,:selected =>params[:option]), onchange: 'this.form.submit();', class: "form-control custom-select" , include_blank: true) %>  
     <% end %>
 </div>
-
-<% @fairs.each do |fair| %>
-<div class="col-12 col-md-6 col-lg-4 p-3">
-    <div class="card">
-        <h1 class="card-header">
-        <td><%= fair.commune %></td>
-        </h1>
-        <div class="card-body">
-            <h5 class="card-title">
-                <td><th>Feria: </th><%= fair.name %></td>
-            </h5>
-            <p>
-                <td><th>Día: </th><%= fair.day %></td>
-            </p>
-            <p>
-                <td><th>Ubicación: </th><%= fair.main_street %></td>
-                <td><th>con </th><%= fair.first_street %></td>
-            </p>
-        <a href="#" class="btn btn-primary">Ver mapa</a>
-        </div>
-    </div>
-</div>
-<% end %>

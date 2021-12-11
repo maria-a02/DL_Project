@@ -1,6 +1,6 @@
 class FairsController < ApplicationController
   def index
-    @fairs = Fair.all
+    @fairs = Fair.all.order("commune ASC")
     @fair = Fair.new
   end
 
