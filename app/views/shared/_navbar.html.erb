@@ -1,36 +1,26 @@
 <nav class="navbar navbar-light fixed-top">
     <div class="container">
-    <%= image_tag("logo.jpg", :alt => "Logo") %>
-        <a class="navbar-brand"></a><a><h5 class="text-nav">Ferias Libres de Santiago</h5></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <a class="navbar-brand">
+        <%= image_tag("logo.jpg", :alt => "Logo")%>
+        <span class="d-inline-block align-top">Ferias Libres de Santiago</span>
+        </a>
+        <div class="nav navbar-nav">
             <% if user_signed_in? %>
-            <ul class="navbar-nav ml-auto">
+            <ul class="nav navbar-nav d-inline-block">
                 <li class="nav-item active">
-                    <%= link_to 'Ver tu perfil', profile_path(current_user.id), class:"nav-link" %>
-                </li>
-                <li class="nav-item active">
-                    <%= link_to 'Ver tus comentarios', opinion_path(current_user.id), class:"nav-link" %>
-                </li>
+                    <%= link_to 'Ver tu perfil', profile_path(current_user.id), class:"btn btn-info" %>
+                    <%= link_to 'Ver tus comentarios', opinion_path(current_user.id), class:"btn btn-light" %>
+                    <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class:"btn btn-primary" %>
+                </li>   
             </ul>
-            <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class:"nav-link" %>
             <% else %>
-                <ul class="navbar-nav ml-auto">
+            <ul class="nav navbar-nav d-inline-block">
                 <li class="nav-item active">
-                    <li class="nav-item m-2 p-1">
                     <%= link_to 'Registrarse', new_user_registration_path, class:"btn btn-success" %>
-                    </li>
-                    <li class="nav-item m-2 p-1">
                     <%= link_to 'Iniciar sesión', new_user_session_path, class: "btn btn-primary" %>
-                    </li>
                 </li> 
-                </ul>
-            <% end %>
             </ul>
+            <% end %>
         </div>
     </div>
 </nav>

@@ -1,22 +1,24 @@
-<div class="container p-3">
+<div class="container-fluid p-3 m-3">
     <% @fairs.each do |fair| %>
-    <div class="col-12 col-md-6 col-lg-4 p-3">
-        <div class="card">
-            <h1 class="card-header">
-            <td><%= fair.commune %></td>
-            </h1>
-            <div class="card-body">
-                <h5 class="card-title">
-                    <td><th>Feria: </th><%= fair.name %></td>
-                </h5>
-                <p>
-                    <td><th>Día: </th><%= fair.day %></td>
-                </p>
-                <p>
-                    <td><th>Ubicación: </th><%= fair.main_street %></td>
-                    <td><th>con </th><%= fair.first_street %></td>
-                </p>
-            <a href="#" class="btn btn-primary">Ver mapa</a>
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 p-3">
+            <div class="card">
+                <h1 class="card-header">
+                <td><%= fair.commune %></td>
+                </h1>
+                <div id="fair-card" class="card-body">
+                    <h5 class="card-title">
+                        <strong>Feria: </strong><%= fair.name %></td>
+                    </h5>
+                    <p>
+                        <strong>Día: </strong><%= fair.day %></td>
+                    </p>
+                    <p>
+                        <strong>Ubicación: </strong><%= fair.main_street %></td>
+                        <strong>con </strong><%= fair.first_street %></td>
+                    </p>
+                <a href="#" class="btn btn-primary">Ver mapa</a>
+                </div>
             </div>
         </div>
     </div>

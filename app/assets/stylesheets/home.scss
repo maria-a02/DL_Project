@@ -3,9 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'bootstrap';
 
-body {
-font-family: 'Merienda',
+body, .title {
+font-family: 'Lobster',
 cursive;
+}
+
+#fair-card, .field, .field-group {
+    font-family: 'Readex Pro',
+    sans-serif;
 }
 
 #footer {
@@ -32,6 +37,11 @@ cursive;
 .img {
     height: 450px;
     weight: 600px;
+}
+
+.profile {
+    height: 100px;
+    weight: 100px;
 }
 
 .card-header {
