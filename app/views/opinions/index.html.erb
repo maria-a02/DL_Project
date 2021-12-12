@@ -1,33 +1,35 @@
 <div class="container-fluid p-3 m-3">
 <h1>Opiniones</h1>
 
-    <% @opinions.each do |opinion| %>
-    <div class="col-12 col-md-6 col-lg-4 p-3">
-        <div class="card">
-        <% if current_user.photo %>
-            <%= image_tag current_user.photo, class: "d-block profile float-left rounded-circle" %>
-        <% else %>
-            <%= image_tag("blank-avatar.png", class: "d-block profile float-left rounded-circle")%>
-        <% end %>
-        <div class="card-body">
-            <p>
-                <strong>Título: </strong><%= opinion.title%>
-            </p>
-            <p>
-                <strong>Feria: </strong><%= opinion.comment %>
-            </p>
-            <p>
-                <strong>Comentario: </strong><%= opinion.comment %>
-            </p>
-            <p>
-                <strong>Rating: </strong>
-            <span id="opinion-rating" data-score="<%= opinion.rating %>"></span>
-            </p>             
-            <%= link_to 'Editar', edit_opinion_path(opinion), class: "btn btn-info"%>
-            <%= link_to 'Borrar', opinion, class: "btn btn-warning", method: :delete, data: {confirm: '¿Quieres eliminar tu comentario?'} %>           
+<div class="row">
+        <% @opinions.each do |opinion| %>
+        <div class="col-12 col-md-6 col-lg-4 p-3">
+            <div class="card">
+            <% if current_user.photo %>
+                <%= image_tag current_user.photo, class: "d-block profile float-left rounded-circle" %>
+            <% else %>
+                <%= image_tag("blank-avatar.png", class: "d-block profile float-left rounded-circle")%>
+            <% end %>
+            <div class="card-body">
+                <p>
+                    <strong>Título: </strong><%= opinion.title%>
+                </p>
+                <p>
+                    <strong>Feria: </strong><%= opinion.comment %>
+                </p>
+                <p>
+                    <strong>Comentario: </strong><%= opinion.comment %>
+                </p>
+                <p>
+                    <strong>Rating: </strong>
+                <span id="opinion-rating" data-score="<%= opinion.rating %>"></span>
+                </p>             
+                <%= link_to 'Editar', edit_opinion_path(opinion), class: "btn btn-info"%>
+                <%= link_to 'Borrar', opinion, class: "btn btn-warning", method: :delete, data: {confirm: '¿Quieres eliminar tu comentario?'} %>           
+            </div>
         </div>
     </div>
-<% end %>
+    <% end %>
 </div>
 
 <div>
