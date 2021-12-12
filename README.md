@@ -9,16 +9,23 @@ Ruby 2.7.3 with Rails 5.2.6
 
 # **Gems required for this project**
 ```
-gem 'bootstrap', '~> 4.1.3'
+# Use bootstrap and jquery for styling
+gem 'bootstrap', '~> 4.6.0'
 gem 'jquery-rails'
+# Use devise for authentication
 gem 'devise'
+# Use activeadmin and cancancan to admin user resources
 gem "activeadmin", "~> 2.9"
+gem 'cancancan'
+# Use chartkick and groupdate to add a simple dashboard
+gem 'chartkick'
+gem 'groupdate'
 ```
 
 # **Entity Relationship Diagram**
 Please note that the models could be modified in the future.
 
-![ERD](https://user-images.githubusercontent.com/83678807/143732268-187d8241-e2f8-4a3c-9ea5-28a47ef1dd62.jpg)
+![ERD](https://user-images.githubusercontent.com/83678807/145724061-d2fe50d9-1839-4b6c-a456-15ef8f8c6899.jpg)
 
 # **Register new user**
 http://localhost:3000/users/sign_up
