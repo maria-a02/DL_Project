@@ -2,9 +2,10 @@ class OpinionsController < ApplicationController
 before_action :set_opinion, only: %i[ show edit update destroy ]
 before_action :authenticate_user! 
 def index
-    @opinions = Opinion.all
+    @opinions = current_user.opinions
     @opinion = Opinion.all
     @users = current_user
+    @fairs = Fair.all
   end
   
   def new
@@ -14,19 +15,19 @@ def index
   end
 
   def show
+    @opinions = current_user.opinions
     @opinion = Opinion.find(params[:id])
-    @opinions = Opinion.all
+    @fairs = Fair.all
   end
 
   def edit
     @fairs = Fair.all
-    @opinions = Opinion.all
+    @opinions = current_user.opinions
     @opinion = Opinion.find(params[:id])
   end
 
   def create
     @fairs = Fair.all
-    @fair = Fair.all
     @opinion = Opinion.new(opinion_params.merge(user: current_user))
     respond_to do |format|
       if @opinion.save

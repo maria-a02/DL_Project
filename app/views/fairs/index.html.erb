@@ -1,6 +1,5 @@
-<div class="container p-3 m-3">
-<h1>Ferias de Santiago</h1>
-
+<div class="container-fluid p-3 m-3">
+<h1>Ferias Libres de Santiago</h1>
     <% @fairs.each do |fair| %>
     <div class="row">
         <div class="col-12 col-md-6 col-lg-4 p-3">
@@ -9,16 +8,10 @@
                 <td><%= fair.commune %></td>
                 </h1>
                 <div id="fair-card" class="card-body">
-                    <h5 class="card-title">
-                        <strong>Feria: </strong><%= fair.name %></td>
-                    </h5>
-                    <p>
-                        <strong>Día: </strong><%= fair.day %></td>
-                    </p>
-                    <p>
-                        <strong>Ubicación: </strong><%= fair.main_street %></td>
-                        <strong>con </strong><%= fair.first_street %></td>
-                    </p>
+                    <h5 class="card-title"><strong>Feria: </strong><%= fair.name %></h5>
+                    <p><strong>Día: </strong><%= fair.day %></td></p>
+                    <p><strong>Ubicación: </strong><%= fair.main_street %></p>
+                    <p><strong>con </strong><%= fair.first_street %></p>
                     <%= link_to 'Ver mapa', fairs_path, class: 'btn btn-primary' %>
                     <%= link_to 'Ver comentarios', opinions_path, class: 'btn btn-light' %>
                 </div>

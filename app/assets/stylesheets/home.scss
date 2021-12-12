@@ -3,14 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'bootstrap';
 
-body, .title {
-font-family: 'Lobster',
-cursive;
-}
-
-#fair-card, .field, .form-group {
-    font-family: 'Readex Pro',
-    sans-serif;
+body {
+font-family: 'Fira Sans',
+sans-serif;
 }
 
 #footer {

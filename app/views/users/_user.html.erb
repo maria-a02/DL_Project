@@ -1,17 +1,17 @@
-<div id='tableuser'>
-
-<div class='row p-3 m-3'>
-        <div>
-            <%= image_tag current_user.photo, class: "d-block profile float-left rounded-circle" %>
+<div class="carduser">
+    <div class="row p-3 m-3">
+            <div>
+                <%= image_tag current_user.photo, class: 'd-block profile float-left rounded-circle' %>
+            </div>
+        <div class="p-3">
+            <h3><strong><%= current_user.name %></strong></h3>
+            <p><strong>Email: </strong><%= current_user.email %></p>
+            <p><strong>Sobre mí: </strong><%= current_user.about %></p>
         </div>
-    <div class='p-3'><h3><strong><%= current_user.name %></strong></h3>
-    <p><strong>Email: </strong><%= current_user.email %></p>
-    <p><strong>Sobre mí: </strong><%= current_user.about %></p>
     </div>
-</div>
 
 </div>
-<div id='edituser' class="p-3">
+<div class="edituser p-3">
     <%= link_to 'Editar', edit_user_path(current_user.id), class: 'btn btn-info', remote: true%>
     <%= link_to 'Volver al inicio', root_path, class: 'btn btn-warning' %>
 </div>
