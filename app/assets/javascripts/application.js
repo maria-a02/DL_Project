@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
+//= require chartkick
+//= require highcharts
 //= require activestorage
 //= require turbolinks
 //= require_tree .

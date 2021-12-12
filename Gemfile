@@ -15,11 +15,17 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
+# Use bootstrap and jquery for styling
 gem 'bootstrap', '~> 4.6.0'
 gem 'jquery-rails'
+# Use devise for authentication
 gem 'devise'
+# Use activeadmin and cancancan to admin user resources
 gem "activeadmin", "~> 2.9"
 gem 'cancancan'
+# Use chartkick and groupdate to add a simple dashboard
+gem 'chartkick'
+gem 'groupdate'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

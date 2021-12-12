@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 py-4">
+            <div class="card">
+            <h5 class="card-header"><strong>Ferias por comuna</strong></h5>
+                <div class="card-body">
+                <%= pie_chart Fair.group(:commune).count %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 py-4">
+            <div class="card">
+            <h5 class="card-header"><strong>Días con más ferias</strong></h5>
+                <div class="card-body">
+                <%= column_chart Fair.group(:day).count %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
