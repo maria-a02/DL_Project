@@ -5,6 +5,7 @@ class FairsController < ApplicationController
   end
 
   def show
+    @fair = Fair.find(params[:id])
   end
 
   def filter

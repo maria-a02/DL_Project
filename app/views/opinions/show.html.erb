@@ -1,30 +1,41 @@
+<div class="container-fluid p-3 m-3">
 <h1>Opiniones</h1>
 
-<table>
-    <thead>
-        <tr>
-        <th>Título</th>
-        <th>Comentario</th>
-        <th>Rating</th>
-        <th>Editar comentario</th>
-        <th>Borrar comentario</th>
-        <th colspan="3"></th>
-    </tr>
-    </thead>
-<tbody>
     <% @opinions.each do |opinion| %>
-        <tr>
-            <td><%= opinion.title%></td>
-            <td><%= opinion.comment %></td>
-            <td id="opinion-rating" data-score="<%= opinion.rating %>"></td>
-            <td><%= link_to 'Editar', edit_opinion_path(opinion) %></td>
-            <td><%= link_to 'Borrar', opinion, method: :delete, data: {confirm: '¿Quieres eliminar tu comentario?'} %></td>
-        </tr>
-    <% end %>
-</tbody>
-</table>
-<%= link_to 'Agregar comentario', new_opinion_path, class: 'btn btn-info' %>
-<%= link_to 'Volver al inicio', root_path, class: 'btn btn-warning' %>
+    <div class="col-12 col-md-6 col-lg-4 p-3">
+        <div class="card">
+        <% if current_user.photo %>
+            <%= image_tag current_user.photo, class: "d-block profile float-left rounded-circle" %>
+        <% else %>
+            <%= image_tag("blank-avatar.png", class: "d-block profile float-left rounded-circle")%>
+        <% end %>
+        <div class="card-body">
+            <p>
+                <strong>Título: </strong><%= opinion.title%>
+            </p>
+            <p>
+                <strong>Feria: </strong><%= opinion.comment %>
+            </p>
+            <p>
+                <strong>Comentario: </strong><%= opinion.comment %>
+            </p>
+            <p>
+                <strong>Rating: </strong>
+            <span id="opinion-rating" data-score="<%= opinion.rating %>"></span>
+            </p>             
+            <%= link_to 'Editar', edit_opinion_path(opinion), class: "btn btn-info"%>
+            <%= link_to 'Borrar', opinion, class: "btn btn-warning", method: :delete, data: {confirm: '¿Quieres eliminar tu comentario?'} %>           
+        </div>
+    </div>
+<% end %>
+</div>
+
+<div>
+    <%= link_to 'Agregar comentario', new_opinion_path, class: 'btn btn-success' %>
+    <%= link_to 'Volver al inicio', root_path, class: 'btn btn-warning' %>
+</div>
+
+
 
 <script>
 $('#opinion-rating').raty({

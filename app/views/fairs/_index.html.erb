@@ -17,7 +17,8 @@
                         <strong>Ubicación: </strong><%= fair.main_street %></td>
                         <strong>con </strong><%= fair.first_street %></td>
                     </p>
-                <a href="#" class="btn btn-primary">Ver mapa</a>
+                    <%= link_to 'Ver mapa', fairs_path, class: 'btn btn-primary' %>
+                    <%= link_to 'Ver comentarios', opinions_path, class: 'btn btn-light' %>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 class OpinionsController < ApplicationController
 before_action :set_opinion, only: %i[ show edit update destroy ]
-  def index
+before_action :authenticate_user! 
+def index
     @opinions = Opinion.all
     @opinion = Opinion.all
     @users = current_user
