@@ -9,7 +9,7 @@
             <ul class="nav navbar-nav d-inline-block">
                 <li class="nav-item active">
                     <%= link_to 'Ver tu perfil', profile_path(current_user.id), class:"btn btn-info" %>
-                    <%= link_to 'Ver tus comentarios', opinion_path(current_user.id), class:"btn btn-light" %>
+                    <%= link_to 'Ver tus comentarios', opinions_path, class:"btn btn-light" %>
                     <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class:"btn btn-primary" %>
                 </li>   
             </ul>

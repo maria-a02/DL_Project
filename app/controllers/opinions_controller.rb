@@ -2,10 +2,12 @@ class OpinionsController < ApplicationController
 before_action :set_opinion, only: %i[ show edit update destroy ]
   def index
     @opinions = Opinion.all
+    @opinion = Opinion.all
+    @users = current_user
   end
   
   def new
-    @users = User.all
+    @users = current_user
     @fairs = Fair.all
     @opinion = Opinion.new
   end
@@ -47,7 +49,7 @@ before_action :set_opinion, only: %i[ show edit update destroy ]
   def destroy
     @opinion.destroy
     respond_to do |format|
-      format.html { redirect_to root_path}
+      format.html { redirect_to opinion_path}
       format.json { head :no_content }
     end
   end

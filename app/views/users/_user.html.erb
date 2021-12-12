@@ -1,8 +1,9 @@
 <div id='tableuser'>
 
 <div class='row p-3 m-3'>
-    <div><%= image_tag current_user.photo, class: "d-block profile float-left rounded-circle" %>
-    </div>
+        <div>
+            <%= image_tag current_user.photo, class: "d-block profile float-left rounded-circle" %>
+        </div>
     <div class='p-3'><h3><strong><%= current_user.name %></strong></h3>
     <p><strong>Email: </strong><%= current_user.email %></p>
     <p><strong>Sobre mí: </strong><%= current_user.about %></p>
