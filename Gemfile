@@ -26,6 +26,9 @@ gem 'cancancan'
 # Use chartkick and groupdate to add a simple dashboard
 gem 'chartkick'
 gem 'groupdate'
+# Use omniauth to login with Github credentials
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'omniauth-rails_csrf_protection'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

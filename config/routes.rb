@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :opinions
   resources :fairs
   resources :users, only: %i[edit update] 
-  devise_for :users
   get 'profile/:id', to: 'users#show', as:'profile'
   get 'filter', to: 'fairs#filter', as: 'filter'
   root 'home#index'
