@@ -20,6 +20,9 @@ gem 'cancancan'
 # Use chartkick and groupdate to add a simple dashboard
 gem 'chartkick'
 gem 'groupdate'
+# Use omniauth to login with Github credentials
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'omniauth-rails_csrf_protection'
 ```
 
 # **Entity Relationship Diagram**
@@ -32,6 +35,14 @@ http://localhost:3000/users/sign_up
 
 # **Login**
 http://localhost:3000/users/sign_in
+
+# **Login with GitHub**
+You can also login with your GitHub credentials.
+
+![image](https://user-images.githubusercontent.com/83678807/145740559-18f6df6f-26a7-4676-9ce0-b996ba563108.png)
+
+![image](https://user-images.githubusercontent.com/83678807/145740661-bf2d68c3-cdc9-48a6-aa57-3faba11a185f.png)
+
 
 # **Admin dashboard**
 http://localhost:3000/admin/login
