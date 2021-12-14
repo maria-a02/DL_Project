@@ -2,22 +2,22 @@
     <div class="container">
         <a class="navbar-brand">
         <%= image_tag("logo.jpg", :alt => "Logo")%>
-        <span class="d-inline-block align-top">Ferias Libres de Santiago</span>
+        <span class="d-inline-block align-top text-nav">Ferias Libres de Santiago</span>
         </a>
         <div class="nav navbar-nav">
             <% if user_signed_in? %>
             <ul class="nav navbar-nav d-inline-block">
                 <li class="nav-item active">
-                    <%= link_to 'Ver tu perfil', profile_path(current_user.id), class:"btn btn-info" %>
-                    <%= link_to 'Ver tus comentarios', opinions_path, class:"btn btn-light" %>
-                    <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class:"btn btn-primary" %>
+                    <%= link_to 'Ver tu perfil', profile_path(current_user.id), class:'btn btn-dark' %>
+                    <%= link_to 'Ver tus comentarios', opinions_path, class:'btn btn-dark' %>
+                    <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class:'btn btn-dark' %>
                 </li>   
             </ul>
             <% else %>
             <ul class="nav navbar-nav d-inline-block">
                 <li class="nav-item active">
-                    <%= link_to 'Registrarse', new_user_registration_path, class:"btn btn-success" %>
-                    <%= link_to 'Iniciar sesión', new_user_session_path, class: "btn btn-primary" %>
+                    <%= link_to 'Registrarse', new_user_registration_path, class:'btn btn-success' %>
+                    <%= link_to 'Iniciar sesión', new_user_session_path, class: 'btn btn-primary' %>
                 </li> 
             </ul>
             <% end %>

@@ -4,25 +4,43 @@
 @import 'bootstrap';
 
 body {
-font-family: 'Fira Sans',
+font-family: 'Poppins',
 sans-serif;
 }
 
+.fairtitle {
+    font-weight: 700;
+}
+
 #footer {
-    background-color: #e3f2fd;
+    background: linear-gradient(to bottom, rgba(26, 95, 78, 0) 0%, rgb(54, 95, 26) 100%);
     text-align: center;
     width: 100%;
     padding: 50px 0;
+    color: #fff;
 }
 
 .navbar {
-    background-color: #e3f2fd;
+    background: linear-gradient(to top, rgba(26, 95, 78, 0) 0%, rgb(54, 95, 26) 100%);
+    color: #fff;
 }
 
 .text-nav {
     text-align: left;
+    color: #fff;
 }
 
+.btn {
+    font-family: 'Poppins';
+    font-weight: 200;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border-radius:100rem;
+    background-size: 400% 400%;
+    color: #FFF;
+    text-transform: uppercase;
+    border: 0;
+}
 .carousel-indicators li {
     border-radius: 50%;
     width: 10px;
@@ -40,9 +58,17 @@ sans-serif;
 }
 
 .card-header {
-    background-color: #93c47d;
+    position: relative;
+    height: 175px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(white, .15);
+    background-blend-mode: overlay;
 }
 
 .card-body {
-    background-color: #fff5d9;
+    background: linear-gradient(45deg, rgb(61, 75, 124), #e9e7e3);
 }
+

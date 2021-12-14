@@ -1,22 +1,23 @@
-<div class="container-fluid p-3 m-3">
-    <% @fairs.each do |fair| %>
+<div class="container-fluid p-3 mb-3">
+
     <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 p-3">
-            <div class="card">
-                <h1 class="card-header">
-                <td><%= fair.commune %></td>
-                </h1>
-                <div id="fair-card" class="card-body">
-                    <h5 class="card-title"><strong>Feria: </strong><%= fair.name %></h5>
-                    <p><strong>Día: </strong><%= fair.day %></td></p>
-                    <p><strong>Ubicación: </strong><%= fair.main_street %></p>
-                    <p><strong>con </strong><%= fair.first_street %></p>
-                    <%= link_to 'Ver mapa', feria_path(fair.id), class: 'btn btn-primary' %>
-                    <%= link_to 'Ver comentarios', opinions_path, class: 'btn btn-light' %>
+        <% @fairs.each do |fair| %>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+                <div class="card">
+                    <h3 class="card-header">
+                    <td><%= fair.commune %></td>
+                    </h3>
+                    <div id="fair-card" class="card-body">
+                        <h5 class="card-title"><strong>Feria: </strong><%= fair.name %></h5>
+                        <p><strong>Día: </strong><%= fair.day %></td></p>
+                        <p><strong>Ubicación: </strong><%= fair.main_street %></p>
+                        <p><strong>con </strong><%= fair.first_street %></p>
+                        <%= link_to 'Ver mapa', feria_path(fair.id), class: 'btn btn-primary' %>
+                        <%= link_to 'Ver comentarios', opinions_path, class: 'btn btn-dark' %>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-<% end %>
+        <% end %>    
+    </div>    
 </div>
 

@@ -16,10 +16,10 @@ puts csv_text
 csv.each do |row|
     f = Fair.new
     f.name = row['NAME']
-    f.description = row['DESCRIPTION']
     f.main_street = row['MAIN_STREET']
     f.first_street = row['FIRST_STREET']
-    f.second_street = row['SECOND_STREET']
+    f.latitude = row['LATITUDE']
+    f.longitude = row['LONGITUDE']
     f.commune = row['COMMUNE']
     f.day = row['DAY']
     f.start_time = row['START_TIME']
