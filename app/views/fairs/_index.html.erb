@@ -11,7 +11,7 @@
                     <p><strong>Día: </strong><%= fair.day %></td></p>
                     <p><strong>Ubicación: </strong><%= fair.main_street %></p>
                     <p><strong>con </strong><%= fair.first_street %></p>
-                    <%= link_to 'Ver mapa', fairs_path, class: 'btn btn-primary' %>
+                    <%= link_to 'Ver mapa', feria_path(fair.id), class: 'btn btn-primary' %>
                     <%= link_to 'Ver comentarios', opinions_path, class: 'btn btn-light' %>
                 </div>
             </div>
