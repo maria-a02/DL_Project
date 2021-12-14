@@ -28,7 +28,7 @@ gem 'omniauth-rails_csrf_protection'
 # **Entity Relationship Diagram**
 Please note that the models could be modified in the future.
 
-![ERD](https://user-images.githubusercontent.com/83678807/145724061-d2fe50d9-1839-4b6c-a456-15ef8f8c6899.jpg)
+![ERD](https://user-images.githubusercontent.com/83678807/145938202-6aac025f-a685-48cf-9af2-42a31280d89f.jpg)
 
 # **Register new user**
 http://localhost:3000/users/sign_up
