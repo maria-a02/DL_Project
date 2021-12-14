@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_14_050344) do
+ActiveRecord::Schema.define(version: 2021_12_14_050721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2021_12_14_050344) do
     t.string "name"
     t.string "main_street"
     t.string "first_street"
-    t.string "second_street"
     t.string "commune"
     t.string "day"
     t.time "start_time"
