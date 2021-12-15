@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :opinions
   resources :users, only: %i[edit update] 
   get 'fairs', to: 'fairs#index', as: 'fairs'
-  get 'fair/:id', to: 'fairs#show', as:'feria'
+  get 'fair/:id', to: 'fairs#show', as:'fair'
   get 'filter', to: 'fairs#filter', as: 'filter'
   get 'profile/:id', to: 'users#show', as:'profile'
   root 'home#index'

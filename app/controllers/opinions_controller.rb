@@ -15,7 +15,7 @@ def index
   end
 
   def show
-    @opinions = current_user.opinions
+    @opinions = Opinion.all
     @opinion = Opinion.find(params[:id])
     @fairs = Fair.all
   end
@@ -31,7 +31,7 @@ def index
     @opinion = Opinion.new(opinion_params.merge(user: current_user))
     respond_to do |format|
       if @opinion.save
-      format.html { redirect_to @opinion, notice: 'Se agregó tu comentario.' }
+      format.html { redirect_to root_path, notice: 'Se agregó tu comentario.' }
       else
       format.html { render :new }
       end
@@ -41,7 +41,7 @@ def index
   def update
     respond_to do |format|
       if @opinion.update!(opinion_params)
-          format.html { redirect_to opinion_path, notice: 'La información se actualizó' }
+          format.html { redirect_to root_path, notice: 'La información se actualizó' }
       else
           format.html { redirect_to edit_opinion_path, notice: 'La información no se pudo actualizar' }
       end
@@ -51,7 +51,7 @@ def index
   def destroy
     @opinion.destroy
     respond_to do |format|
-      format.html { redirect_to opinion_path}
+      format.html { redirect_to root_path}
       format.json { head :no_content }
     end
   end

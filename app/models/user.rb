@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :fairs, through: :opinions
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:github]
+  ratyrate_rater
 
   def to_s
     name

@@ -1,7 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Feria</h1>
-    <p><strong>Nombre: </strong><%= @fair.name %></p>
-    <p><strong>Comuna: </strong><%= @fair.commune %></p>
 
-<%= link_to 'Volver', root_path %>
+<h2>Mapa</h2>
+
+<h2>Opiniones</h2>
+
+<div class="row">
+        <% @opinions.each do |opinion| %>
+        <div class="col-12 col-md-6 col-lg-4 p-3">
+            <div class="card">
+            <% if current_user.photo %>
+                <%= image_tag current_user.photo, class: "d-block profile float-left rounded-circle" %>
+            <% else %>
+                <%= image_tag("blank-avatar.png", class: "d-block profile float-left rounded-circle")%>
+            <% end %>
+            <div class="card-body">
+                <p><strong>Título: </strong><%= opinion.title%></p>
+                <p><strong>Feria: </strong><%= opinion.fair.name %></p>
+                <p><strong>Comentario: </strong><%= opinion.comment %></p>
+                <p><strong>Rating: </strong><%= rating_for opinion, :rating %></p>          
+                <%= link_to 'Editar', edit_opinion_path(opinion), class: "btn btn-info"%>
+                <%= link_to 'Borrar', opinion, class: "btn btn-warning", method: :delete, data: {confirm: '¿Quieres eliminar tu comentario?'} %>           
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
+
+<div>
+    <%= link_to 'Dejar una opinión', new_opinion_path, class: 'btn btn-success' %>
+    <%= link_to 'Volver al inicio', root_path, class: 'btn btn-warning' %>
+</div>

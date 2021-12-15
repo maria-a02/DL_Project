@@ -1,4 +1,6 @@
+<p id="notice"><%= notice %></p>
 <div class="container-fluid p-3 m-3">
+
 <h1>Opiniones</h1>
 
 <div class="row">
@@ -12,9 +14,9 @@
             <% end %>
             <div class="card-body">
                 <p><strong>Título: </strong><%= opinion.title%></p>
-                <p><strong>Feria: </strong><%=  %></p>
+                <p><strong>Feria: </strong><%= opinion.fair.name %></p>
                 <p><strong>Comentario: </strong><%= opinion.comment %></p>
-                <p><strong>Rating: </strong><span class="opinion-rating" data-score="<%= opinion.rating %>"></span></p>             
+                <p><strong>Rating: </strong><%= rating_for opinion, :rating %></p>          
                 <%= link_to 'Editar', edit_opinion_path(opinion), class: "btn btn-info"%>
                 <%= link_to 'Borrar', opinion, class: "btn btn-warning", method: :delete, data: {confirm: '¿Quieres eliminar tu comentario?'} %>           
             </div>
@@ -24,16 +26,6 @@
 </div>
 
 <div>
-    <%= link_to 'Agregar comentario', new_opinion_path, class: 'btn btn-success' %>
+    <%= link_to 'Dejar una opinión', new_opinion_path, class: 'btn btn-success' %>
     <%= link_to 'Volver al inicio', root_path, class: 'btn btn-warning' %>
 </div>
-
-<script>
-$('.opinion-rating').raty({
-    readOnly: true,
-    score: function() {
-    return $(this).attr('data-score');
-    },
-    path: '/assets/'
-});
-</script>

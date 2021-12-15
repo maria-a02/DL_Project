@@ -20,16 +20,6 @@
         <%= form.text_field :comment %>
     </div>
     
-    <div class="field rating-form">
-        <%= form.label :Rating %>
-        <script>
-            $('.rating-form').raty({
-            path: '/assets/',
-            scoreName: 'opinion[rating]'
-            });
-        </script>
-    </div>
-
     <div class="field">
         <%= form.label :Feria %>
         <%= form.select :fair_id, @fairs.map{|fair| [fair.name, fair.id] }, prompt: "Selecciona una feria" %>

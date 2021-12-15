@@ -10,10 +10,8 @@
                     <div id="fair-card" class="card-body">
                         <h5 class="card-title"><strong>Feria: </strong><%= fair.name %></h5>
                         <p><strong>Día: </strong><%= fair.day %></td></p>
-                        <p><strong>Ubicación: </strong><%= fair.main_street %></p>
-                        <p><strong>con </strong><%= fair.first_street %></p>
-                        <%= link_to 'Ver mapa', feria_path(fair.id), class: 'btn btn-primary' %>
-                        <%= link_to 'Ver comentarios', opinions_path, class: 'btn btn-dark' %>
+                        <p><strong>Ubicación:</strong> En <%= fair.main_street %> con <%= fair.first_street %></p>
+                        <%= link_to 'Ver más detalles', fair_path(fair.id), class: 'btn btn-primary' %>
                     </div>
                 </div>
             </div>

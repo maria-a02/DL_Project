@@ -26,6 +26,8 @@ gem 'cancancan'
 # Use chartkick and groupdate to add a simple dashboard
 gem 'chartkick'
 gem 'groupdate'
+# Gem ratyrate to add rating
+gem 'ratyrate'
 # Use omniauth to login with Github credentials
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'omniauth-rails_csrf_protection'
