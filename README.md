@@ -4,6 +4,16 @@ It's very common to use search platforms to find a product, a market nowadays. B
 # **Trello Board**
 https://trello.com/b/oSNl58Oi/laferiapp
 
+# **App in Heroku**
+https://laferiaapp21.herokuapp.com/
+
+# **Setting instructions**
+You may clone this repo. Put the following code:
+```
+$ git clone https://github.com/maria-a02/DL_Project.git
+```
+Press ENTER. You will need to set the gemset recommended and the gems listed below.
+
 # **Gemset recommended**
 Ruby 2.7.3 with Rails 5.2.6
 
