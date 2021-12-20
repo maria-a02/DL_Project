@@ -31,7 +31,8 @@ def index
     @opinion = Opinion.new(opinion_params.merge(user: current_user))
     respond_to do |format|
       if @opinion.save
-      format.html { redirect_to root_path, notice: 'Se agregó tu comentario.' }
+      OpinionMailer.with(opinion: @opinion).new_opinion_email.deliver_later
+      format.html { redirect_to root_path, notice: 'Se agregó tu opinion.' }
       else
       format.html { render :new }
       end
