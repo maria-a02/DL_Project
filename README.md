@@ -19,6 +19,8 @@ Ruby 2.7.3 with Rails 5.2.6
 
 # **Gems required for this project**
 ```
+# Use postgresql as the database for Active Record
+gem 'pg'
 # Use bootstrap and jquery for styling
 gem 'bootstrap', '~> 4.6.0'
 gem 'jquery-rails'
@@ -30,9 +32,37 @@ gem 'cancancan'
 # Use chartkick and groupdate to add a simple dashboard
 gem 'chartkick'
 gem 'groupdate'
+# Gem ratyrate to add rating
+gem 'ratyrate'
 # Use omniauth to login with Github credentials
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'omniauth-rails_csrf_protection'
+```
+Please make sure to execute the bundle command.
+```
+$ bundle
+```
+Also, yarn is needed for the dashboards in the user profile.
+```
+$ yarn add highcharts
+```
+Initialize Postgresql in your computer. 
+```
+$ sudo /sbin/service postgresql start
+$ rails db:create
+$ rails db:migrate
+```
+This project contains a seed file. 
+```
+$ rails db:seed
+```
+You can start the server localhost:3000.
+```
+$ rails s
+```
+You can reset the database if you experience any issue.
+```
+rails db:reset
 ```
 
 # **Entity Relationship Diagram**
