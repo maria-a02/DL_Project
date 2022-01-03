@@ -6,6 +6,7 @@
 body {
 font-family: 'Poppins',
 sans-serif;
+background-image: url('background.jpg');
 }
 
 .fairtitle {
@@ -35,10 +36,8 @@ sans-serif;
     font-weight: 200;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    border-radius:100rem;
     background-size: 400% 400%;
     color: #FFF;
-    text-transform: uppercase;
     border: 0;
 }
 .carousel-indicators li {
@@ -59,16 +58,18 @@ sans-serif;
 
 .card-header {
     position: relative;
-    height: 175px;
+    height: 50px;
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-color: rgba(white, .15);
+    background-color: rgb(54, 95, 26);
+    color: white;
     background-blend-mode: overlay;
 }
 
 .card-body {
-    background: linear-gradient(45deg, rgb(61, 75, 124), #e9e7e3);
+    background: rgb(61, 75, 124);
+    color: white;
 }
 
