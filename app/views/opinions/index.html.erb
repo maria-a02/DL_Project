@@ -16,7 +16,7 @@
                 <p><strong>Comentario: </strong><%= opinion.comment %></p>
                 <p><strong>Rating: </strong><%= rating_for opinion, :rating %></p>
                 <%= time_ago_in_words(opinion.created_at) %> 
-                <%= link_to 'Editar', edit_fair_opinion_path(opinion.fair,opinion), class: "btn btn-info"%>
+                <%= link_to 'Editar', edit_fair_opinion_path(@fair.id, opinion.id), class: "btn btn-info"%>
                 <%= link_to 'Borrar', [opinion.fair,opinion], class: "btn btn-warning", method: :delete, data: {confirm: '¿Quieres eliminar tu comentario?'} %>               
             </div>
         </div>

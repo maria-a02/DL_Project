@@ -24,7 +24,7 @@ end
     @fairs = Fair.all
     @opinions = current_user.opinions
     @fair = Fair.find(params[:fair_id])
-    @opinion = @fair.opinions.find(params[:id])
+    @opinion = Opinion.find(params[:id])
   end
 
   def create
@@ -42,6 +42,7 @@ end
   end
 
   def update
+    @opinion = Opinion.find(params[:id])
     respond_to do |format|
       if @opinion.update!(opinion_params)
           format.html { redirect_to root_path, alert: '¡La información se actualizó!' }

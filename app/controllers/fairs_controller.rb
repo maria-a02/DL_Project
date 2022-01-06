@@ -10,6 +10,7 @@ before_action :authenticate_user!
     @fair = Fair.find(params[:id])
     @opinions = @fair.opinions
     @fairs = Fair.find(params[:id])
+    @opinion = Opinion.new
   end
 
   def filter
