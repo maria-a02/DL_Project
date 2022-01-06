@@ -1,14 +1,4 @@
-<%= form_with(model: @opinion, local: true) do |form| %>
-    <% if @opinion.errors.any? %>
-        <div id="error_explanation">
-            <h2><%= pluralize(@opinion.errors.count, "error") %> no se pudo agregar este comentario:</h2>
-            <ul>
-            <% @opinion.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-            </ul>
-        </div>
-    <% end %>
+<%= form_for([@fair,@fair.opinions.build]) do |form| %>
     
     <div class="field">
         <%= form.label :Título %>
@@ -20,11 +10,6 @@
         <%= form.text_field :comment %>
     </div>
     
-    <div class="field">
-        <%= form.label :Feria %>
-        <%= form.select :fair_id, @fairs.map{|fair| [fair.name, fair.id] }, prompt: "Selecciona una feria" %>
-    </div>
-
     <div class="actions">
         <%= form.submit class: 'btn btn-success' %>
     </div>

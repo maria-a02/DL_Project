@@ -1,6 +1,6 @@
 <div class= 'py-3'>
-    <h2>Encuentra la feria</h2>
+    <h2>Encuentra la feria por comuna</h2>
     <%= form_tag filter_path, :method => 'get' do %>    
-    <%= select_tag(:fair_id, options_for_select(Fair.pluck(:commune) ,:selected =>params[:option]), onchange: 'this.form.submit();', class: "form-control custom-select" , include_blank: true) %>  
+    <%= select_tag(:commune, options_for_select(Fair.pluck(:commune) ,:selected =>params[:option]), onchange: 'this.form.submit();', class: "form-control custom-select" , include_blank: true) %>  
     <% end %>
 </div>

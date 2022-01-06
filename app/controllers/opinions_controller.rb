@@ -1,13 +1,13 @@
 class OpinionsController < ApplicationController
-before_action :set_opinion, only: %i[ show edit update destroy ]
 before_action :authenticate_user! 
 def index
     @opinions = current_user.opinions
     @opinion = Opinion.all
     @users = current_user
-    @fairs = Fair.all
-  end
-  
+    @fair = Fair.find(params[:fair_id])
+    @fairs = Fair.find(params[:fair_id])  
+end
+
   def new
     @users = current_user
     @fairs = Fair.all
@@ -23,16 +23,18 @@ def index
   def edit
     @fairs = Fair.all
     @opinions = current_user.opinions
-    @opinion = Opinion.find(params[:id])
+    @fair = Fair.find(params[:fair_id])
+    @opinion = @fair.opinions.find(params[:id])
   end
 
   def create
     @fairs = Fair.all
-    @opinion = Opinion.new(opinion_params.merge(user: current_user))
+    @fair = Fair.find(params[:fair_id])
+    @opinion = @fair.opinions.create(opinion_params.merge(user: current_user))
     respond_to do |format|
       if @opinion.save
       OpinionMailer.with(opinion: @opinion).new_opinion_email.deliver_later
-      format.html { redirect_to root_path, notice: 'Se agregó tu opinion.' }
+      format.html { redirect_to root_path, alert: '¡Se agregó tu comentario!' }
       else
       format.html { render :new }
       end
@@ -42,24 +44,25 @@ def index
   def update
     respond_to do |format|
       if @opinion.update!(opinion_params)
-          format.html { redirect_to root_path, notice: 'La información se actualizó' }
+          format.html { redirect_to root_path, alert: '¡La información se actualizó!' }
       else
-          format.html { redirect_to edit_opinion_path, notice: 'La información no se pudo actualizar' }
+          format.html { redirect_to edit_opinion_path, alert: 'La información no se pudo actualizar.' }
       end
     end
   end
 
   def destroy
+    @fair = Fair.find(params[:fair_id])
+    @opinion = @fair.opinions.find(params[:id])
     @opinion.destroy
     respond_to do |format|
-      format.html { redirect_to root_path}
-      format.json { head :no_content }
+    format.html { redirect_to root_path,  alert: '¡Se borró tu comentario!' }
     end
   end
 
   private
   def set_opinion
-    @opinion = Opinion.find(params[:id])
+    @opinion = Opinions.find(params[:id])
   end
   
   def opinion_params
