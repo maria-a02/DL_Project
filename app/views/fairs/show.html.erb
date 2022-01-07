@@ -24,7 +24,7 @@
 <h2 class="py-3">OPINIONES (<%= @fair.opinions.count %>)</h2>
 <div class="row">
         <% @opinions.each do |opinion| %>
-        <div class="col-12 col-md-6 col-lg-4 p-3">
+        <div class="p-3">
             <div class="carduser">
             <% if current_user.photo %>
                 <%= image_tag current_user.photo, class: "d-block profile float-left rounded-circle" %>
@@ -45,10 +45,7 @@
 </div>
 
 <div>
-<h3>Agregar una opinión</h3>
+<h2>DEJA TU OPINIÓN</h2>
     <%= render 'opinions/form' %>
 </div>
 
-<div>
-    <%= link_to 'Volver al inicio', root_path, class: 'btn btn-warning' %>
-</div>

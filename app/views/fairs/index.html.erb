@@ -11,7 +11,7 @@
                         <p><strong>Día: </strong><%= fair.day %></td></p>
                         <p><strong>Horario: </strong>De <%= fair.start_time.strftime("%H:%M") %> a <%= fair.end_time.strftime("%H:%M") %> hrs</p>
                         <p><strong>Ubicación:</strong> En <%= fair.main_street %> con <%= fair.first_street %></p>
-                        <%= link_to 'Ver más detalles', fair_path(fair.id), class: 'btn btn-warning' %>
+                        <%= link_to ' Detalles', fair_path(fair.id), class: 'btn btn-warning fas fa-map-marked-alt' %>
                     </div>
                 </div>
             </div>

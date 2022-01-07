@@ -1,30 +1,31 @@
-<div class="container-fluid p-3 m-3">
+<div class="container p-3 m-3">
 <h1>Opiniones</h1>
 
-        <% @opinions.each do |opinion| %>
-        <div class="col-12 col-md-6 col-lg-4 p-3">
+    <% @opinions.each do |opinion| %>
+    <div class="row">
+
+        <div class="p-3">
             <div class="carduser">
             <% if current_user.photo %>
                 <%= image_tag current_user.photo, class: "d-block profile float-left rounded-circle" %>
             <% else %>
                 <%= image_tag("blank-avatar.png", class: "d-block profile float-left rounded-circle")%>
             <% end %>
-            <div class="card-body">
-                <p><strong>Feria: </strong><%= opinion.fair.name %></p>
-                <p><strong>Autor: </strong><%= opinion.user.name%></p>
-                <p><strong>Título: </strong><%= opinion.title%></p>
-                <p><strong>Comentario: </strong><%= opinion.comment %></p>
-                <p><strong>Rating: </strong><%= rating_for opinion, :rating %></p>
-                <%= time_ago_in_words(opinion.created_at) %> 
-                <%= link_to 'Editar', edit_fair_opinion_path(@fair.id, opinion.id), class: "btn btn-info"%>
-                <%= link_to 'Borrar', [opinion.fair,opinion], class: "btn btn-warning", method: :delete, data: {confirm: '¿Quieres eliminar tu comentario?'} %>               
+                <div class="card-body">
+                    <p><strong>Feria: </strong><%= opinion.fair.name %></p>
+                    <p><strong>Autor: </strong><%= opinion.user.name%></p>
+                    <p><strong>Título: </strong><%= opinion.title%></p>
+                    <p><strong>Comentario: </strong><%= opinion.comment %></p>
+                    <p><strong>Rating: </strong><%= rating_for opinion, :rating %></p>
+                    <%= time_ago_in_words(opinion.created_at) %> 
+                    <%= link_to '', edit_fair_opinion_path(@fair.id, opinion.id), class: "btn btn-info fas fa-edit"%>
+                    <%= link_to '', [opinion.fair,opinion], class: "btn btn-warning fas fa-trash-alt", method: :delete, data: {confirm: '¿Quieres eliminar tu comentario?'} %>               
+                </div>
             </div>
-        </div>
+        </div>    
     </div>
-    <% end %>
+<% end %>
+
 </div>
 
-<div>
-    <%= link_to 'Volver al inicio', root_path, class: 'btn btn-warning' %>
-</div>
 

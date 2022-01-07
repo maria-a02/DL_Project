@@ -10,27 +10,26 @@
         </div>  
     <% end %>
 
-    <div class="field py-1">    
+    <div class="field py-1 m-3">    
         <%= form.label :Nombre %>    
         <%= form.text_field :name %>  
     </div>
 
-    <div class="field py-1">    
+    <div class="field py-1 m-3">    
         <%= form.label :Foto %>    
         <%= form.text_field :photo %>  
     </div>
 
-        <div class="field py-1">    
+        <div class="field py-1 m-3">    
         <%= form.label :Sobre_mí %>    
         <%= form.text_field :about %>  
     </div>
 
-    <div class="actions py-1">    
+    <div class="actions py-1 m-3">    
     <%= form.submit class: 'btn btn-success' %>  
     </div>
 <% end %>
 
 <div class= 'py-2'>
-    <%= link_to 'Volver a tu perfil', profile_path(current_user.id), class: 'btn btn-light' %>
-    <%= link_to 'Volver al inicio', root_path, class: 'btn btn-warning' %>
+    <%= link_to '', profile_path(current_user.id), class: 'btn btn-info fas fa-arrow-left py-1 m-3' %>
 </div>

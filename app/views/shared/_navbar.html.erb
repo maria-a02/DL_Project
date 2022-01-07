@@ -8,9 +8,9 @@
             <% if user_signed_in? %>
             <ul class="nav navbar-nav d-inline-block">
                 <li class="nav-item active">
-                    <%= link_to 'Ver tu perfil', profile_path(current_user.id), class:'btn btn-dark' %>
-                    <%= link_to 'Ver tus comentarios', fair_opinions_path(current_user.id), class:'btn btn-dark' %>
-                    <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class:'btn btn-dark' %>
+                    <%= link_to ' Perfil', profile_path(current_user.id), class:'btn btn-dark fas fa-user-alt 9x' %>
+                    <%= link_to ' Comentarios', fair_opinions_path(current_user.id), class:'btn btn-dark fas fa-comments 9x' %>
+                    <%= link_to ' Cerrar sesión', destroy_user_session_path, method: :delete, class:'btn btn-dark fas fa-sign-out-alt 9x' %>
                 </li>   
             </ul>
             <% else %>
